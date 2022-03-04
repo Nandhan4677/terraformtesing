@@ -1,11 +1,16 @@
 provider "azurerm" {
     version = 1.38
     }
-resource "azurerm_storage_account" "lab" {
-  name                     = "nandhanreddy89"
-  resource_group_name      = "terraformtest1"
+resource "azurerm_resource_group" "terraform-assesment" {
+  name                     = "terraform-assesment"
   location                 = "East US"
-  account_tier            = "basic"
+}
+
+resource "azurerm_storage_account" "nandhan" {
+  name                     = "nandhanreddy89"
+  resource_group_name      = "terraform-assesment"
+  location                 = "East US"
+  account_tier            = "standard"
   account_replication_type = "LRS"
 
    tags = {
@@ -15,7 +20,7 @@ resource "azurerm_storage_account" "lab" {
   }
 resource "azurerm_app_service_plan" "nandhansp" {
   name                = "nandhanserviceplan"
-  location            = "eastus"
+  location            = "East US"
   resource_group_name = "terraform-assesment"
 
   sku {
@@ -25,7 +30,7 @@ resource "azurerm_app_service_plan" "nandhansp" {
 }
 resource "azurerm_app_service" "nandhanas" {
   name                = "nandhanappservice"
-  location            = "eastus"
+  location            = "East US"
   resource_group_name = "terraform-assesment"
   app_service_plan_id = azurerm_app_service_plan.nandhansp.id
 
