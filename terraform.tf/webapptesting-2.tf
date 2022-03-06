@@ -40,7 +40,7 @@ resource "azurerm_app_service" "app-service" {
   name                = "nandhanappservice"
   location            = "East US"
   resource_group_name = "terraform-assesment"
-  app_service_plan_id = azurerm_app_service_plan.nandhansp1.id
+  app_service_plan_id = azurerm_app_service_plan.app-service-plan.id
 
 
   site_config {
