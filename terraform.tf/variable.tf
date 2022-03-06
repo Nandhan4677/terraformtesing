@@ -4,7 +4,7 @@ variable "terraform-assesment" {
 }
 variable "nandhanreddy89" {
     default   = "teffaform-storage-account"
-    descrdescription = "the name of storage account"  
+    description = "the name of storage account"  
 }
 
 variable "nandhanserviceplan" {
@@ -16,9 +16,4 @@ variable "nandhanserviceplan" {
 variable "nandhanappservice" {
   default     = "terraform-app-service"
   description = "The name of the Web App"
-}
-
-variable "East US" {
-  default     = "East US"
-  description = "The Azure location where all resources in this example should be created"
 }
