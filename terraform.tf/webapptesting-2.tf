@@ -9,7 +9,11 @@ terraform {
 provider "azurerm" {
   features {}
 }
-
+resource "azurerm_resoure_group" "azresource-group" {
+  name               = "terraform1"
+  location           = "East US"
+  
+}
 resource "azurerm_storage_account" "storage-account" {
   name                     = "nandhanreddy89"
   resource_group_name      = "terraform1"
