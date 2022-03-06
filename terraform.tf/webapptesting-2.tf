@@ -48,5 +48,6 @@ resource "azurerm_container_registry" "acr" {
   name                     = "nandhancontainer"
   location                 = "East US"
   resource_group_name      = "terraform1" 
-  sku                      = "Basic"
+  sku                      = "standard"
+  
 }
