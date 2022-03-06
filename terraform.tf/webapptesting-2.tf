@@ -9,14 +9,10 @@ terraform {
 provider "azurerm" {
   features {}
 }
-resource "azurerm_resource_group" "terraform-assesment1" {
-  name                     = "terraform-assesment"
-  location                 = "East US"
-}
 
 resource "azurerm_storage_account" "storage-account" {
   name                     = "nandhanreddy89"
-  resource_group_name      = "terraform-assesment"
+  resource_group_name      = "terraform1"
   location                 = "East US"
   account_tier            = "standard"
   account_replication_type = "LRS"
@@ -29,7 +25,7 @@ resource "azurerm_storage_account" "storage-account" {
 resource "azurerm_app_service_plan" "app-service-plan" {
   name                = "nandhanserviceplan"
   location            = "East US"
-  resource_group_name = "terraform-assesment"
+  resource_group_name = "terraform1"
 
   sku {
     tier = "Standard"
@@ -39,7 +35,7 @@ resource "azurerm_app_service_plan" "app-service-plan" {
 resource "azurerm_app_service" "app-service" {
   name                = "nandhanappservice"
   location            = "East US"
-  resource_group_name = "terraform-assesment"
+  resource_group_name = "terraform1"
   app_service_plan_id = azurerm_app_service_plan.app-service-plan.id
 
 
