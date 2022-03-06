@@ -44,3 +44,9 @@ resource "azurerm_app_service" "app-service" {
     scm_type                 = "LocalGit"
   }
 }
+resource "azurerm_container_registry" "acr" {
+  name                     = "nandhancontainer"
+  location                 = "East US"
+  resource_group_name      = "terraform1" 
+  sku                      = "Basic"
+}
