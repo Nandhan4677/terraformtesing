@@ -14,7 +14,7 @@ resource "azurerm_resource_group" "terraform-assesment1" {
   location                 = "East US"
 }
 
-resource "azurerm_storage_account" "nandhan" {
+resource "azurerm_storage_account" {
   name                     = "nandhanreddy89"
   resource_group_name      = "terraform-assesment"
   location                 = "East US"
@@ -26,7 +26,7 @@ resource "azurerm_storage_account" "nandhan" {
     CreatedBy = "Admin"
       }
   }
-resource "azurerm_app_service_plan" "nandhansp1" {
+resource "azurerm_app_service_plan" {
   name                = "nandhanserviceplan"
   location            = "East US"
   resource_group_name = "terraform-assesment"
@@ -36,7 +36,7 @@ resource "azurerm_app_service_plan" "nandhansp1" {
     size = "S1"
   }
 }
-resource "azurerm_app_service" "nandhanas1" {
+resource "azurerm_app_service"{
   name                = "nandhanappservice"
   location            = "East US"
   resource_group_name = "terraform-assesment"
